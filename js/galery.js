@@ -1,63 +1,43 @@
-/*const element = document.querySelector("#galery");
+const gallery = document.querySelector(".container");
+const progress = document.querySelector("#myBar");
 
-element.addEventListener('wheel', (event) => {
- // event.preventDefault();
+window.addEventListener('wheel', scrollHandler);
 
-  element.scrollBy({
-    left: event.deltaY < 0 ? -30 : 30,
-    
-  });
+gallery.addEventListener("scroll", function () {
+  scrollPercent =
+    (gallery.scrollLeft /
+      (gallery.scrollWidth - gallery.clientWidth)) *
+    100;
+  progress.style.width = scrollPercent + "%";
 });
-const handler = (event) => {
 
-}
-*/
-(function () {
+function scrollHandler(e) {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollBottom = window.pageYOffset || document.documentElement.scrollBottom;
+  let deltaX = e.wheelDelta < 0 ? 40 : -40;
+  if (window.screen.width > 768) {
+    if (scrollTop > 1270) {
+      window.onscroll = function () {
 
-  const element = document.querySelector(".gallery");
-  const progress = document.querySelector("#myBar");
-
-
-  window.addEventListener('scroll', scrollHandler, false);
-
-  /* element.addEventListener('wheel', (event) => {
-    //  event.preventDefault();
-    
-      element.scrollBy({left: event.deltaY < 0 ? -30 : 30,});
-    });
- */
-  function scrollHandler(e) {
-    let scroll = 0;
-    const scroscrollllTop = window.pageYOffset || document.documentElement.scrollTop;
-    //  var scrollLeft = window.pageYOffset || document.documentElement.scrollLeft;
-    //   var scrollRight = window.pageYOffset || document.documentElement.scrolRight;
-    //  var scrollBottom = window.pageYOffset || document.documentElement.scrolBottom;
-    //  console.log(scrollTop,scrollBottom);
-    if (window.screen.width > 768) {
-      if (scrollTop > 1219) {
-        //   e.preventDefault();
-        console.log(scrollTop, e.deltaX, e.deltaY);
+        gallery.scrollBy({ left: deltaX, },);
+        window.scrollTo(1340, 1340);
+      };
+      if (progress.style.width === '100%') {
+        window.onscroll = function () { };
+      }
+    } else {
+      if (scrollBottom < 1300) {
         window.onscroll = function () {
-          let delta = e.deltaY < 0 ? -40 : 40;
-          scroll += delta;
-          progress.style.width = scroll;
-          element.scrollBy({ left:delta , },);
-          window.scrollTo(1219, 1219);
+          gallery.scrollBy({ left: deltaX, },);
+          window.scrollTo(1340, 1340);
         };
       }
+      if (progress.style.width === '0%') {
+        window.onscroll = function () { };
+      }
     }
+    
   }
-})();
 
-function disableScroll() {
-  scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-
-    window.onscroll = function () {
-      window.scrollTo(scrollLeft, scrollTop);
-    };
 }
 
-function enableScroll() {
-  window.onscroll = function () { };
-} 
