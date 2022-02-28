@@ -234,7 +234,7 @@ body {
 
 .header-right p {
   color: #ffffff;
-  font-family: Proxima Nova;
+  font-family: "Proxima Nova";
   font-size: 15px;
   line-height: 28px;
   opacity: 0.9;
@@ -332,7 +332,7 @@ body {
 }
 
 .why-we-left h4 {
-  font-family: Proxima Nova;
+  font-family: "Proxima Nova";
   font-size: 18px;
   line-height: 28px;
   letter-spacing: -0.5px;
@@ -403,7 +403,7 @@ body {
 }
 
 .services-header p {
-  font-family: Bebas Neue;
+  font-family: "Bebas Neue";
   font-size: 20px;
   line-height: 16px;
   letter-spacing: 20px;
@@ -469,7 +469,7 @@ body {
 }
 
 .card-link {
-  font-family: Bebas Neue;
+  font-family: "Bebas Neue";
   font-size: 20px;
   line-height: 16px;
   letter-spacing: 7px;
@@ -490,7 +490,7 @@ body {
 }
 
 .steps h2 {
-  font-family: Bebas Neue;
+  font-family: "Bebas Neue";
   font-size: 80px;
   line-height: 64px;
   text-align: center;
@@ -715,7 +715,7 @@ body {
     font-size: 15px;
   }
   .line-2 {
-    font-family: Proxima Nova;
+    font-family: "Proxima Nova";
     font-size: 15px;
     line-height: 28px;
   }
@@ -724,7 +724,7 @@ body {
   }
 
   .header-right p {
-    font-family: Proxima Nova;
+    font-family: "Proxima Nova";
     font-size: 15px;
     line-height: 20px;
     opacity: 0.9;
